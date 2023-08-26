@@ -1,0 +1,13 @@
+<script type="text/javascript">
+
+var current="one";
+function to_top(para)
+{
+  var  old_top=document.getElementById(current).style;
+  var new_top=document.getElementById(para).style;
+  old_top.zIndex=new_top.zIndex;
+   new_top.zIndex="3";
+  current=para;
+ } 
+
+</script>
