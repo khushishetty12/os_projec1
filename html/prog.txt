@@ -1,0 +1,82 @@
+<html>
+<head><title>overlap</title>
+<center>
+<style type="text/css">
+
+#one{
+   position:absolute;
+   top:260px;
+   left:200px;
+  background-color:coral;
+  border:solid; 
+  width:300px;
+ height:100px;
+  padding:2%;
+  z-index:3;
+ }
+#two{
+   position:absolute;
+   top:230px;
+   left:230px;
+   background-color:pink;
+    border:solid; 
+   width:300px;
+   height:100px;
+   padding:2%;
+   z-index:2;
+ }
+#three{
+    position:absolute;
+   top:200px;
+   left:260px;
+   background-color:lightblue;
+    border:solid; 
+    width:300px;
+    height:100px;
+   padding:2%;
+    z-index:1;
+ }
+#four{
+   position:absolute;
+   top:170px;
+   left:290px;
+  background-color:lightgrey;
+   border:solid; 
+   width:300px;
+   height:100px;
+  padding:2%;
+  z-index:0;
+ }
+
+</style>
+<script type="text/javascript">
+
+var current="one";
+function to_top(para)
+{
+  var  old_top=document.getElementById(current).style;
+  var new_top=document.getElementById(para).style;
+  old_top.zIndex=new_top.zIndex;
+   new_top.zIndex="3";
+  current=para;
+ } 
+
+</script>
+</head>
+<body>
+
+<p class="a"  id="one" onmouseover="to_top(id)">But this is very brittle! What if you were to place something on the page and then something 
+else comes along after it? Maybe you have an  icon within a navigation that you always</p>
+
+<p class="a" id="two"  onmouseover="to_top(id)">but a third party comes in and puts in a banner ad. (I’m not advocating for banner ads, but they do exist.) 
+This pushes the navigation down and now the icon is out of place. </p>
+
+<p class="a" id="three"  onmouseover="to_top(id)" >Or, let’s say you want to make a self-contained component that you can use in multiple places.
+You need it to be reusable and work within its own context, no matter where you use it.</p>
+
+<p class="a"  id="four"  onmouseover="to_top(id)" >If we put position: relative; on the parent element, anything inside of it with position: absolute; 
+will be placed absolutely, relative to that containing unit! We can use the same. </p>
+
+</center>
+</body>
+</html>
